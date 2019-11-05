@@ -39,10 +39,10 @@ expo eject
 
 ## Preview
 
-![homescreen](https://raw.githubusercontent.com/callstack-internal/react-native-paper-login-template/master/preview/homescreen.png)
-![login](https://raw.githubusercontent.com/callstack-internal/react-native-paper-login-template/master/preview/login.png)
-![register](https://raw.githubusercontent.com/callstack-internal/react-native-paper-login-template/master/preview/register.png)
-![forgot](https://raw.githubusercontent.com/callstack-internal/react-native-paper-login-template/master/preview/forgot.png)
-![dashboard](https://raw.githubusercontent.com/callstack-internal/react-native-paper-login-template/master/preview/dashboard.png)
+![homescreen](https://raw.githubusercontent.com/callstack/react-native-paper-login-template/master/preview/homescreen.png)
+![login](https://raw.githubusercontent.com/callstack/react-native-paper-login-template/master/preview/login.png)
+![register](https://raw.githubusercontent.com/callstack/react-native-paper-login-template/master/preview/register.png)
+![forgot](https://raw.githubusercontent.com/callstack/react-native-paper-login-template/master/preview/forgot.png)
+![dashboard](https://raw.githubusercontent.com/callstack/react-native-paper-login-template/master/preview/dashboard.png)
 
 ### Made with ❤️ at Callstack
