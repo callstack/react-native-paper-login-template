@@ -8,24 +8,25 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "expo": "^35.0.0",
-    "react": "16.8.3",
-    "react-dom": "16.8.3",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
-    "react-native-gesture-handler": "1.3.0",
+    "expo": "^39.0.0",
+    "node-modules": "^1.0.1",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.3.tar.gz",
+    "react-native-gesture-handler": "~1.7.0",
     "react-native-paper": "^3.0.0",
+    "react-native-screens": "~2.10.1",
     "react-native-status-bar-height": "^2.4.0",
-    "react-native-screens": "^2.2.0",
-    "react-native-web": "^0.11.7",
+    "react-native-web": "~0.13.7",
     "react-navigation": "^4.0.10",
     "react-navigation-stack": "^1.10.2"
   },
   "devDependencies": {
-    "@types/react": "^16.8.23",
-    "@types/react-native": "^0.57.65",
-    "babel-preset-expo": "^7.1.0",
+    "@types/react": "~16.9.35",
+    "@types/react-native": "~0.63.2",
+    "babel-preset-expo": "^8.3.0",
     "prettier": "^1.18.2",
-    "typescript": "^3.6.3"
+    "typescript": "~3.9.2"
   },
   "private": true
 }

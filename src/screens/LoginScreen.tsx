@@ -37,7 +37,7 @@ const LoginScreen = ({ navigation }: Props) => {
 
       <Logo />
 
-      <Header>Welcome back.</Header>
+      <Header><Text style={styles.header}>Aqui tem de tudo um pouco :D</Text></Header>
 
       <TextInput
         label="Email"
@@ -53,7 +53,7 @@ const LoginScreen = ({ navigation }: Props) => {
       />
 
       <TextInput
-        label="Password"
+        label="Senha"
         returnKeyType="done"
         value={password.value}
         onChangeText={text => setPassword({ value: text, error: '' })}
@@ -66,7 +66,7 @@ const LoginScreen = ({ navigation }: Props) => {
         <TouchableOpacity
           onPress={() => navigation.navigate('ForgotPasswordScreen')}
         >
-          <Text style={styles.label}>Forgot your password?</Text>
+          <Text style={styles.label}>Esqueceu sua senha?</Text>
         </TouchableOpacity>
       </View>
 
@@ -75,9 +75,9 @@ const LoginScreen = ({ navigation }: Props) => {
       </Button>
 
       <View style={styles.row}>
-        <Text style={styles.label}>Don’t have an account? </Text>
+        <Text style={styles.label}>Não tem uma conta? </Text>
         <TouchableOpacity onPress={() => navigation.navigate('RegisterScreen')}>
-          <Text style={styles.link}>Sign up</Text>
+          <Text style={styles.link}>Registre-se</Text>
         </TouchableOpacity>
       </View>
     </Background>
@@ -100,6 +100,13 @@ const styles = StyleSheet.create({
   link: {
     fontWeight: 'bold',
     color: theme.colors.primary,
+  },
+  header: {
+    fontWeight: 'bold',
+    textAlign: 'center',
+    alignSelf: 'center',
+    alignContent: 'center',
+    alignItems: 'center',
   },
 });
 

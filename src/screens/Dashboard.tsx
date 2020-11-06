@@ -13,13 +13,12 @@ type Props = {
 const Dashboard = ({ navigation }: Props) => (
   <Background>
     <Logo />
-    <Header>Let’s start</Header>
+    <Header>É isso pessoal</Header>
     <Paragraph>
-      Your amazing app starts here. Open you favourite code editor and start
-      editing this project.
+      Desse modo você aprendeu a implementar a biometria em seu app React.
     </Paragraph>
     <Button mode="outlined" onPress={() => navigation.navigate('HomeScreen')}>
-      Logout
+      Sair
     </Button>
   </Background>
 );
