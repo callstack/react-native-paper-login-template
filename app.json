@@ -3,7 +3,6 @@
     "name": "React Native Paper Login Template",
     "slug": "react-native-paper-login-template",
     "privacy": "public",
-    "sdkVersion": "35.0.0",
     "platforms": ["ios", "android", "web"],
     "version": "1.0.0",
     "orientation": "portrait",
