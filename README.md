@@ -1,50 +1,8 @@
-# React Native Paper Login Template
+# React Native Paper Login Page and Calculator
 
-The easiest way to start with your application.
+This is a part of ICCS485 Rapid Frontend development. We will be building a
+login page in React-Native and Calculator as the dashboard.
 
-## Features
+# Member
 
-- Save energy & hours of hard-work
-- Complete source code in React Native
-- Based on [**react-native-paper**](https://reactnativepaper.com/)
-- 5 screens & 16 components
-- Prettier for pretty, formatted code
-- Minimum dependencies
-
-## How to use?
-
-1. Download or clone this repo.
-
-2. Install dependencies.
-
-```js
-npm install
-// or
-yarn install
-```
-
-3. Run project on iOS / Android.
-
-```js
- npm run ios // npm run android
- // or
- yarn ios // yarn android
-```
-
-Project was created using [Expo](https://expo.io/). If you want standard native project please run following command:
-
-```js
-expo eject
-```
-
-## Preview
-
-![homescreen](https://raw.githubusercontent.com/callstack/react-native-paper-login-template/master/preview/homescreen.png)
-![login](https://raw.githubusercontent.com/callstack/react-native-paper-login-template/master/preview/login.png)
-![register](https://raw.githubusercontent.com/callstack/react-native-paper-login-template/master/preview/register.png)
-![forgot](https://raw.githubusercontent.com/callstack/react-native-paper-login-template/master/preview/forgot.png)
-![dashboard](https://raw.githubusercontent.com/callstack/react-native-paper-login-template/master/preview/dashboard.png)
-
-## Made with ❤️ at Callstack
-
-This template is an open source project and will always remain free to use. If you think it's cool, please star it 🌟. Callstack is a group of React and React Native geeks, contact us at hello@callstack.com if you need any help with these or just want to say hi!
+- Vikrom Narula 6081050
