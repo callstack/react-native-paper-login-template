@@ -64,8 +64,11 @@ const RegisterScreen = ({ navigation }: Props) => {
       return;
     }
 
-    // firebase.auth().createUserWithEmailAndPassword(email.value, password.value);
-    navigation.navigate('Dashboard');
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(email.value, password.value)
+      .then(() => navigation.navigate('Dashboard'))
+      .catch((err) => alert(err));
   };
 
   return (

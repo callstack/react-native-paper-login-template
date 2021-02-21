@@ -9,6 +9,7 @@ export const emailValidator = (email: string) => {
 
 export const passwordValidator = (password: string) => {
   if (!password || password.length <= 0) return 'Password cannot be empty.';
+  if (password.length <= 5) return 'Password must be at least 6 characters.';
 
   return '';
 };
@@ -23,7 +24,12 @@ export const confirmPasswordValidator = (
   password: string,
   confirmPassword: string
 ) => {
-  if (!password || !confirmPassword || confirmPassword.length <= 0)
+  if (
+    !password ||
+    !confirmPassword ||
+    confirmPassword.length <= 5 ||
+    password !== confirmPassword
+  )
     return 'Password must match.';
   return '';
 };

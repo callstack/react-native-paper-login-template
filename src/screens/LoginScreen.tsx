@@ -1,5 +1,6 @@
 import React, { memo, useState } from 'react';
 import { TouchableOpacity, StyleSheet, Text, View } from 'react-native';
+import firebase from 'firebase/app';
 import Background from '../components/Background';
 import Logo from '../components/Logo';
 import Header from '../components/Header';
@@ -9,6 +10,7 @@ import BackButton from '../components/BackButton';
 import theme from '../core/theme';
 import { emailValidator, passwordValidator } from '../core/utils';
 import { Navigation } from '../types';
+import 'firebase/auth';
 
 type Props = {
   navigation: Navigation;
@@ -47,7 +49,11 @@ const LoginScreen = ({ navigation }: Props) => {
       return;
     }
 
-    navigation.navigate('Dashboard');
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email.value, password.value)
+      .then(() => navigation.navigate('Dashboard'))
+      .catch((err) => alert(err));
   };
 
   return (
