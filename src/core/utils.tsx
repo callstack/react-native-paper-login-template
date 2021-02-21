@@ -18,3 +18,12 @@ export const nameValidator = (name: string) => {
 
   return '';
 };
+
+export const confirmPasswordValidator = (
+  password: string,
+  confirmPassword: string
+) => {
+  if (!password || !confirmPassword || confirmPassword.length <= 0)
+    return 'Password must match.';
+  return '';
+};

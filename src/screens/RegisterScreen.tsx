@@ -1,5 +1,6 @@
 import React, { memo, useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import firebase from 'firebase/app';
 import Background from '../components/Background';
 import Logo from '../components/Logo';
 import Header from '../components/Header';
@@ -12,7 +13,9 @@ import {
   emailValidator,
   passwordValidator,
   nameValidator,
+  confirmPasswordValidator,
 } from '../core/utils';
+import 'firebase/auth';
 
 type Props = {
   navigation: Navigation;
@@ -39,19 +42,29 @@ const RegisterScreen = ({ navigation }: Props) => {
   const [name, setName] = useState({ value: '', error: '' });
   const [email, setEmail] = useState({ value: '', error: '' });
   const [password, setPassword] = useState({ value: '', error: '' });
+  const [confirmPassword, setConfirmPassword] = useState({
+    value: '',
+    error: '',
+  });
 
   const onSignUpPressed = () => {
     const nameError = nameValidator(name.value);
     const emailError = emailValidator(email.value);
     const passwordError = passwordValidator(password.value);
+    const confirmPasswordError = confirmPasswordValidator(
+      password.value,
+      confirmPassword.value
+    );
 
-    if (emailError || passwordError || nameError) {
+    if (emailError || passwordError || nameError || confirmPasswordError) {
       setName({ ...name, error: nameError });
       setEmail({ ...email, error: emailError });
       setPassword({ ...password, error: passwordError });
+      setConfirmPassword({ ...confirmPassword, error: confirmPasswordError });
       return;
     }
 
+    // firebase.auth().createUserWithEmailAndPassword(email.value, password.value);
     navigation.navigate('Dashboard');
   };
 
@@ -92,6 +105,16 @@ const RegisterScreen = ({ navigation }: Props) => {
         onChangeText={(text) => setPassword({ value: text, error: '' })}
         error={!!password.error}
         errorText={password.error}
+        secureTextEntry
+      />
+
+      <TextInput
+        label="Confirm Password"
+        returnKeyType="done"
+        value={confirmPassword.value}
+        onChangeText={(text) => setConfirmPassword({ value: text, error: '' })}
+        error={!!confirmPassword.error}
+        errorText={confirmPassword.error}
         secureTextEntry
       />
 
