@@ -1,9 +1,6 @@
 import React, { memo } from 'react';
-import {
-  ImageBackground,
-  StyleSheet,
-  KeyboardAvoidingView,
-} from 'react-native';
+import { ImageBackground, StyleSheet } from 'react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 type Props = {
   children: React.ReactNode;
@@ -32,9 +29,13 @@ const Background = ({ children }: Props) => (
     resizeMode="repeat"
     style={styles.background}
   >
-    <KeyboardAvoidingView style={styles.container} behavior="padding">
+    <KeyboardAwareScrollView
+      resetScrollToCoords={{ x: 0, y: 0 }}
+      contentContainerStyle={styles.container}
+      scrollEnabled={false}
+    >
       {children}
-    </KeyboardAvoidingView>
+    </KeyboardAwareScrollView>
   </ImageBackground>
 );
 
