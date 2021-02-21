@@ -4,7 +4,6 @@ import {
   StyleSheet,
   KeyboardAvoidingView,
 } from 'react-native';
-import img = require('../assets/background_dot.png');
 
 type Props = {
   children: React.ReactNode;
@@ -27,7 +26,12 @@ const styles = StyleSheet.create({
 });
 
 const Background = ({ children }: Props) => (
-  <ImageBackground source={img} resizeMode="repeat" style={styles.background}>
+  <ImageBackground
+    // eslint-disable-next-line global-require
+    source={require('../assets/background_dot.png')}
+    resizeMode="repeat"
+    style={styles.background}
+  >
     <KeyboardAvoidingView style={styles.container} behavior="padding">
       {children}
     </KeyboardAvoidingView>

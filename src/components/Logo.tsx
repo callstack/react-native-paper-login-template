@@ -1,6 +1,5 @@
 import React, { memo } from 'react';
 import { Image, StyleSheet } from 'react-native';
-import img = require('../assets/logo.png');
 
 const styles = StyleSheet.create({
   image: {
@@ -10,6 +9,12 @@ const styles = StyleSheet.create({
   },
 });
 
-const Logo = () => <Image source={img} style={styles.image} />;
+const Logo = () => (
+  <Image
+    // eslint-disable-next-line global-require
+    source={require('../assets/logo.png')}
+    style={styles.image}
+  />
+);
 
 export default memo(Logo);
