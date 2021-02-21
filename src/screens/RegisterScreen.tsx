@@ -6,7 +6,7 @@ import Header from '../components/Header';
 import Button from '../components/Button';
 import TextInput from '../components/TextInput';
 import BackButton from '../components/BackButton';
-import { theme } from '../core/theme';
+import theme from '../core/theme';
 import { Navigation } from '../types';
 import {
   emailValidator,
@@ -18,12 +18,29 @@ type Props = {
   navigation: Navigation;
 };
 
+const styles = StyleSheet.create({
+  label: {
+    color: theme.colors.secondary,
+  },
+  button: {
+    marginTop: 24,
+  },
+  row: {
+    flexDirection: 'row',
+    marginTop: 4,
+  },
+  link: {
+    fontWeight: 'bold',
+    color: theme.colors.primary,
+  },
+});
+
 const RegisterScreen = ({ navigation }: Props) => {
   const [name, setName] = useState({ value: '', error: '' });
   const [email, setEmail] = useState({ value: '', error: '' });
   const [password, setPassword] = useState({ value: '', error: '' });
 
-  const _onSignUpPressed = () => {
+  const onSignUpPressed = () => {
     const nameError = nameValidator(name.value);
     const emailError = emailValidator(email.value);
     const passwordError = passwordValidator(password.value);
@@ -50,7 +67,7 @@ const RegisterScreen = ({ navigation }: Props) => {
         label="Name"
         returnKeyType="next"
         value={name.value}
-        onChangeText={text => setName({ value: text, error: '' })}
+        onChangeText={(text) => setName({ value: text, error: '' })}
         error={!!name.error}
         errorText={name.error}
       />
@@ -59,7 +76,7 @@ const RegisterScreen = ({ navigation }: Props) => {
         label="Email"
         returnKeyType="next"
         value={email.value}
-        onChangeText={text => setEmail({ value: text, error: '' })}
+        onChangeText={(text) => setEmail({ value: text, error: '' })}
         error={!!email.error}
         errorText={email.error}
         autoCapitalize="none"
@@ -72,13 +89,13 @@ const RegisterScreen = ({ navigation }: Props) => {
         label="Password"
         returnKeyType="done"
         value={password.value}
-        onChangeText={text => setPassword({ value: text, error: '' })}
+        onChangeText={(text) => setPassword({ value: text, error: '' })}
         error={!!password.error}
         errorText={password.error}
         secureTextEntry
       />
 
-      <Button mode="contained" onPress={_onSignUpPressed} style={styles.button}>
+      <Button mode="contained" onPress={onSignUpPressed} style={styles.button}>
         Sign Up
       </Button>
 
@@ -91,22 +108,5 @@ const RegisterScreen = ({ navigation }: Props) => {
     </Background>
   );
 };
-
-const styles = StyleSheet.create({
-  label: {
-    color: theme.colors.secondary,
-  },
-  button: {
-    marginTop: 24,
-  },
-  row: {
-    flexDirection: 'row',
-    marginTop: 4,
-  },
-  link: {
-    fontWeight: 'bold',
-    color: theme.colors.primary,
-  },
-});
 
 export default memo(RegisterScreen);
