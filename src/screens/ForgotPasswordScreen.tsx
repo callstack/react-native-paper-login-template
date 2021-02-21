@@ -1,5 +1,6 @@
 import React, { memo, useState } from 'react';
 import { Text, StyleSheet, TouchableOpacity } from 'react-native';
+import firebase from 'firebase/app';
 import { emailValidator } from '../core/utils';
 import Background from '../components/Background';
 import BackButton from '../components/BackButton';
@@ -9,6 +10,7 @@ import TextInput from '../components/TextInput';
 import theme from '../core/theme';
 import Button from '../components/Button';
 import { Navigation } from '../types';
+import 'firebase/auth';
 
 type Props = {
   navigation: Navigation;
@@ -39,7 +41,13 @@ const ForgotPasswordScreen = ({ navigation }: Props) => {
       return;
     }
 
-    navigation.navigate('LoginScreen');
+    firebase
+      .auth()
+      .sendPasswordResetEmail(email.value)
+      .then(() => navigation.navigate('LoginScreen'))
+      .catch((err) =>
+        alert('This is an invalid email or the user have been deleted.')
+      );
   };
 
   return (
