@@ -32,7 +32,7 @@ const Background = ({ children }: Props) => (
     <KeyboardAwareScrollView
       resetScrollToCoords={{ x: 0, y: 0 }}
       contentContainerStyle={styles.container}
-      scrollEnabled={false}
+      keyboardShouldPersistTaps="always"
     >
       {children}
     </KeyboardAwareScrollView>

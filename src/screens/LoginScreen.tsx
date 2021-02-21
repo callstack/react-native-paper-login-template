@@ -59,11 +59,8 @@ const LoginScreen = ({ navigation }: Props) => {
   return (
     <Background>
       <BackButton goBack={() => navigation.navigate('HomeScreen')} />
-
       <Logo />
-
       <Header>Welcome back.</Header>
-
       <TextInput
         label="Email"
         returnKeyType="next"
@@ -76,7 +73,6 @@ const LoginScreen = ({ navigation }: Props) => {
         textContentType="emailAddress"
         keyboardType="email-address"
       />
-
       <TextInput
         label="Password"
         returnKeyType="done"
@@ -86,7 +82,6 @@ const LoginScreen = ({ navigation }: Props) => {
         errorText={password.error}
         secureTextEntry
       />
-
       <View style={styles.forgotPassword}>
         <TouchableOpacity
           onPress={() => navigation.navigate('ForgotPasswordScreen')}
@@ -94,11 +89,9 @@ const LoginScreen = ({ navigation }: Props) => {
           <Text style={styles.label}>Forgot your password?</Text>
         </TouchableOpacity>
       </View>
-
       <Button mode="contained" onPress={onLoginPressed}>
         Login
       </Button>
-
       <View style={styles.row}>
         <Text style={styles.label}>Don’t have an account? </Text>
         <TouchableOpacity onPress={() => navigation.navigate('RegisterScreen')}>

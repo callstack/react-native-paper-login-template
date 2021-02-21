@@ -53,11 +53,8 @@ const ForgotPasswordScreen = ({ navigation }: Props) => {
   return (
     <Background>
       <BackButton goBack={() => navigation.navigate('LoginScreen')} />
-
       <Logo />
-
       <Header>Restore Password</Header>
-
       <TextInput
         label="E-mail address"
         returnKeyType="done"
@@ -70,11 +67,9 @@ const ForgotPasswordScreen = ({ navigation }: Props) => {
         textContentType="emailAddress"
         keyboardType="email-address"
       />
-
       <Button mode="contained" onPress={onSendPressed} style={styles.button}>
         Send Reset Instructions
       </Button>
-
       <TouchableOpacity
         style={styles.back}
         onPress={() => navigation.navigate('LoginScreen')}
