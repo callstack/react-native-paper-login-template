@@ -1,6 +1,5 @@
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import * as dotenv from 'dotenv';
 
 import {
   HomeScreen,
@@ -9,8 +8,6 @@ import {
   ForgotPasswordScreen,
   Dashboard,
 } from './screens';
-
-dotenv.config();
 
 const Router = createStackNavigator(
   {
