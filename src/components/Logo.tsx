@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
 const Logo = () => (
   <Image
     // eslint-disable-next-line global-require
-    source={require('../assets/logo.png')}
+    source={require('../assets/cal-icon.png')}
     style={styles.image}
   />
 );

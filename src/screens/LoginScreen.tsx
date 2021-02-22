@@ -60,7 +60,7 @@ const LoginScreen = ({ navigation }: Props) => {
     <Background>
       <BackButton goBack={() => navigation.navigate('HomeScreen')} />
       <Logo />
-      <Header>Welcome back.</Header>
+      <Header>Please login.</Header>
       <TextInput
         label="Email"
         returnKeyType="next"

@@ -23,7 +23,7 @@ const BackButton = ({ goBack }: Props) => (
     <Image
       style={styles.image}
       // eslint-disable-next-line global-require
-      source={require('../assets/arrow_back.png')}
+      source={require('../assets/ios-back-icon-10.png')}
     />
   </TouchableOpacity>
 );

@@ -9,9 +9,11 @@ type Props = {
 const styles = StyleSheet.create({
   header: {
     fontSize: 26,
-    color: theme.colors.primary,
+    color: '#ff8000',
     fontWeight: 'bold',
     paddingVertical: 14,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 

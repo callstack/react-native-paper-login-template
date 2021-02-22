@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Calculator } from 'react-native-calculator';
 import Background from '../components/Background';
 import Button from '../components/Button';
@@ -8,6 +8,12 @@ import { Navigation } from '../types';
 type Props = {
   navigation: Navigation;
 };
+
+const styles = StyleSheet.create({
+  drawerPaper: {
+    backgroundColor: 'red',
+  },
+});
 
 const Dashboard = ({ navigation }: Props) => (
   <Background>

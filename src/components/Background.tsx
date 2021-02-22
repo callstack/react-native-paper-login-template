@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { ImageBackground, StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 type Props = {
@@ -10,6 +10,7 @@ const styles = StyleSheet.create({
   background: {
     flex: 1,
     width: '100%',
+    backgroundColor: '#000000',
   },
   container: {
     flex: 1,
@@ -23,12 +24,8 @@ const styles = StyleSheet.create({
 });
 
 const Background = ({ children }: Props) => (
-  <ImageBackground
-    // eslint-disable-next-line global-require
-    source={require('../assets/background_dot.png')}
-    resizeMode="repeat"
-    style={styles.background}
-  >
+  // eslint-disable-next-line react/jsx-no-undef
+  <View style={styles.background}>
     <KeyboardAwareScrollView
       resetScrollToCoords={{ x: 0, y: 0 }}
       contentContainerStyle={styles.container}
@@ -36,7 +33,7 @@ const Background = ({ children }: Props) => (
     >
       {children}
     </KeyboardAwareScrollView>
-  </ImageBackground>
+  </View>
 );
 
 export default memo(Background);
