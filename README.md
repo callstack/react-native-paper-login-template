@@ -23,12 +23,12 @@ npm install
 yarn install
 ```
 
-3. Run project on iOS / Android.
+3. Run project on iOS / Android / Web.
 
 ```js
- npm run ios // npm run android
+ npm run ios // npm run android // npm run web
  // or
- yarn ios // yarn android
+ yarn ios // yarn android // yarn web
 ```
 
 Project was created using [Expo](https://expo.io/). If you want standard native project please run following command:

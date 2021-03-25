@@ -1,5 +1,5 @@
 import React, { memo, useState } from 'react';
-import { Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { Platform, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { emailValidator } from '../core/utils';
 import Background from '../components/Background';
 import BackButton from '../components/BackButton';
@@ -25,12 +25,12 @@ const ForgotPasswordScreen = ({ navigation }: Props) => {
       return;
     }
 
-    navigation.navigate('LoginScreen');
+    navigation.navigate('Login');
   };
 
   return (
     <Background>
-      <BackButton goBack={() => navigation.navigate('LoginScreen')} />
+      {Platform.OS !== "web" && <BackButton goBack={() => navigation.navigate('Login')} />}
 
       <Logo />
 
@@ -55,7 +55,7 @@ const ForgotPasswordScreen = ({ navigation }: Props) => {
 
       <TouchableOpacity
         style={styles.back}
-        onPress={() => navigation.navigate('LoginScreen')}
+        onPress={() => navigation.navigate('Login')}
       >
         <Text style={styles.label}>← Back to login</Text>
       </TouchableOpacity>
