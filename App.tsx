@@ -1,12 +1,26 @@
 import React from 'react';
-import { Provider } from 'react-native-paper';
-import App from './src';
+import { Provider as PaperProvider } from 'react-native-paper';
+import { NavigationContainer } from '@react-navigation/native';
 import { theme } from './src/core/theme';
+import Main from './src';
 
-const Main = () => (
-  <Provider theme={theme}>
-    <App />
-  </Provider>
+const linking = {
+  prefixes: [],
+  config: {
+    screens: {
+      "Home": "home",
+      "Login": "login",
+      "Register": "register",
+      "Forgot Password": "forgot-password",
+      "Dashboard": "dashboard"
+    }
+  }
+}
+
+export default () => (
+  <PaperProvider theme={theme}>
+    <NavigationContainer linking={linking}>
+      <Main />
+    </NavigationContainer>
+  </PaperProvider>
 );
-
-export default Main;

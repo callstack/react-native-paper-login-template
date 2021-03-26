@@ -1,11 +1,14 @@
-import { DefaultTheme } from 'react-native-paper';
+import { DefaultTheme as PaperDefaultTheme } from 'react-native-paper';
+import { DefaultTheme as NavigationDefaultTheme } from '@react-navigation/native';
 
 export const theme = {
-  ...DefaultTheme,
+  ...PaperDefaultTheme,
+  ...NavigationDefaultTheme,
   colors: {
-    ...DefaultTheme.colors,
+    ...PaperDefaultTheme.colors,
+    ...NavigationDefaultTheme.colors,
     primary: '#600EE6',
     secondary: '#414757',
-    error: '#f13a59',
+    error: '#f13a59'
   },
 };

@@ -1,5 +1,5 @@
 import React, { memo, useState } from 'react';
-import { TouchableOpacity, StyleSheet, Text, View } from 'react-native';
+import { Platform, TouchableOpacity, StyleSheet, Text, View } from 'react-native';
 import Background from '../components/Background';
 import Logo from '../components/Logo';
 import Header from '../components/Header';
@@ -33,8 +33,8 @@ const LoginScreen = ({ navigation }: Props) => {
 
   return (
     <Background>
-      <BackButton goBack={() => navigation.navigate('HomeScreen')} />
-
+      {Platform.OS !== "web" && <BackButton goBack={() => navigation.navigate('Home')} />}
+      
       <Logo />
 
       <Header>Welcome back.</Header>
@@ -64,7 +64,7 @@ const LoginScreen = ({ navigation }: Props) => {
 
       <View style={styles.forgotPassword}>
         <TouchableOpacity
-          onPress={() => navigation.navigate('ForgotPasswordScreen')}
+          onPress={() => navigation.navigate('Forgot Password')}
         >
           <Text style={styles.label}>Forgot your password?</Text>
         </TouchableOpacity>
@@ -76,7 +76,7 @@ const LoginScreen = ({ navigation }: Props) => {
 
       <View style={styles.row}>
         <Text style={styles.label}>Don’t have an account? </Text>
-        <TouchableOpacity onPress={() => navigation.navigate('RegisterScreen')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Register')}>
           <Text style={styles.link}>Sign up</Text>
         </TouchableOpacity>
       </View>
