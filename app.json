@@ -23,7 +23,11 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.callstack.reactnativepaperlogintemplate"
+    },
+    "android": {
+      "package": "com.callstack.reactnativepaperlogintemplate"
     }
   }
 }
