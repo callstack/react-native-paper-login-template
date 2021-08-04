@@ -37,6 +37,5 @@
         <data android:scheme="com.callstack.reactnativepaperlogintemplate"/>
       </intent-filter>
     </activity>
-    <activity android:name="com.facebook.react.devsupport.DevSettingsActivity"/>
   </application>
 </manifest>

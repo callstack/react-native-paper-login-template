@@ -5,7 +5,7 @@
     <item name="colorPrimary">@color/colorPrimary</item>
     <item name="android:windowTranslucentStatus">true</item>
   </style>
-  <style name="Theme.App.SplashScreen" parent="Theme.AppCompat.Light.NoActionBar">
+  <style name="Theme.App.SplashScreen" parent="Theme.AppCompat.DayNight.NoActionBar">
     <item name="android:windowBackground">@drawable/splashscreen</item>
   </style>
 </resources>
