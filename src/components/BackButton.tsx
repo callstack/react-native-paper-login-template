@@ -7,7 +7,11 @@ type Props = {
 };
 
 const BackButton = ({ goBack }: Props) => (
-  <TouchableOpacity onPress={goBack} style={styles.container}>
+  <TouchableOpacity
+    onPress={goBack}
+    style={styles.container}
+    accessibilityRole="button"
+  >
     <Image
       style={styles.image}
       source={require('../assets/arrow_back.png')}
