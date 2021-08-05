@@ -3,11 +3,15 @@ import { render, fireEvent } from '@testing-library/react-native';
 import RegisterScreen from '../RegisterScreen';
 
 describe('RegisterScreen', () => {
-  it('fires navigate() if name, email and password are valid', () => {
-    const navigation = {
+  let navigation;
+
+  beforeEach(() => {
+    navigation = {
       navigate: jest.fn(),
     };
+  });
 
+  it('fires navigate() if name, email and password are valid', () => {
     const { getByLabelText, getByText } = render(
       <RegisterScreen {...{ navigation }} />
     );
@@ -28,10 +32,6 @@ describe('RegisterScreen', () => {
   });
 
   it('does not fire navigate() if name is missing', () => {
-    const navigation = {
-      navigate: jest.fn(),
-    };
-
     const { getByLabelText, getByText } = render(
       <RegisterScreen {...{ navigation }} />
     );
@@ -49,10 +49,6 @@ describe('RegisterScreen', () => {
   });
 
   it('does not fire navigate() if password is missing', () => {
-    const navigation = {
-      navigate: jest.fn(),
-    };
-
     const { getByLabelText, getByText } = render(
       <RegisterScreen {...{ navigation }} />
     );
@@ -70,10 +66,6 @@ describe('RegisterScreen', () => {
   });
 
   it('does not fire navigate() if email is missing', () => {
-    const navigation = {
-      navigate: jest.fn(),
-    };
-
     const { getByLabelText, getByText } = render(
       <RegisterScreen {...{ navigation }} />
     );
@@ -91,10 +83,6 @@ describe('RegisterScreen', () => {
   });
 
   it('does not fire navigate() if email is wrong', () => {
-    const navigation = {
-      navigate: jest.fn(),
-    };
-
     const { getByLabelText, getByText } = render(
       <RegisterScreen {...{ navigation }} />
     );

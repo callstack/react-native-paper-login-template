@@ -3,11 +3,15 @@ import { render, fireEvent } from '@testing-library/react-native';
 import ForgotPasswordScreen from '../ForgotPasswordScreen';
 
 describe('ForgotPasswordScreen', () => {
-  it('fires navigate() if email is valid', () => {
-    const navigation = {
+  let navigation;
+
+  beforeEach(() => {
+    navigation = {
       navigate: jest.fn(),
     };
+  });
 
+  it('fires navigate() if email is valid', () => {
     const { getByLabelText, getByText } = render(
       <ForgotPasswordScreen {...{ navigation }} />
     );
@@ -22,10 +26,6 @@ describe('ForgotPasswordScreen', () => {
   });
 
   it('does not fire navigate() if email is missing', () => {
-    const navigation = {
-      navigate: jest.fn(),
-    };
-
     const { getByText } = render(<ForgotPasswordScreen {...{ navigation }} />);
 
     const resetPasswordButton = getByText(/send reset instructions/i);
@@ -35,10 +35,6 @@ describe('ForgotPasswordScreen', () => {
   });
 
   it('does not fire navigate() if email is wrong', () => {
-    const navigation = {
-      navigate: jest.fn(),
-    };
-
     const { getByLabelText, getByText } = render(
       <ForgotPasswordScreen {...{ navigation }} />
     );

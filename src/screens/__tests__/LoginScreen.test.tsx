@@ -3,11 +3,15 @@ import { render, fireEvent } from '@testing-library/react-native';
 import LoginScreen from '../LoginScreen';
 
 describe('LoginScreen', () => {
-  it('fires navigate() if both email and password are valid', () => {
-    const navigation = {
+  let navigation;
+
+  beforeEach(() => {
+    navigation = {
       navigate: jest.fn(),
     };
+  });
 
+  it('fires navigate() if both email and password are valid', () => {
     const { getByLabelText, getByText } = render(
       <LoginScreen {...{ navigation }} />
     );
@@ -25,10 +29,6 @@ describe('LoginScreen', () => {
   });
 
   it('does not fire navigate() if email is missing', () => {
-    const navigation = {
-      navigate: jest.fn(),
-    };
-
     const { getByLabelText, getByText } = render(
       <LoginScreen {...{ navigation }} />
     );
@@ -43,10 +43,6 @@ describe('LoginScreen', () => {
   });
 
   it('does not fire navigate() if password is missing', () => {
-    const navigation = {
-      navigate: jest.fn(),
-    };
-
     const { getByLabelText, getByText } = render(
       <LoginScreen {...{ navigation }} />
     );
@@ -61,10 +57,6 @@ describe('LoginScreen', () => {
   });
 
   it('does not fire navigate() if email is wrong', () => {
-    const navigation = {
-      navigate: jest.fn(),
-    };
-
     const { getByLabelText, getByText } = render(
       <LoginScreen {...{ navigation }} />
     );
