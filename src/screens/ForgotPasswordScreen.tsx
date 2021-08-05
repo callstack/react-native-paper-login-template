@@ -47,15 +47,22 @@ const ForgotPasswordScreen = ({ navigation }: Props) => {
         autoCompleteType="email"
         textContentType="emailAddress"
         keyboardType="email-address"
+        testID="forgot-password-screen-login-input"
       />
 
-      <Button mode="contained" onPress={_onSendPressed} style={styles.button}>
+      <Button
+        mode="contained"
+        onPress={_onSendPressed}
+        style={styles.button}
+        testID="reset-password-button"
+      >
         Send Reset Instructions
       </Button>
 
       <TouchableOpacity
         style={styles.back}
         onPress={() => navigation.navigate('LoginScreen')}
+        testID="login-link"
       >
         <Text style={styles.label}>← Back to login</Text>
       </TouchableOpacity>
