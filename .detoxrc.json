@@ -1,0 +1,26 @@
+{
+  "testRunner": "jest",
+  "runnerConfig": "e2e/config.json",
+  "skipLegacyWorkersInjection": true,
+  "apps": {
+    "ios": {
+      "type": "ios.app",
+      "binaryPath": "build/ios/Build/Products/Debug-iphonesimulator/reactnativepaperlogintemplate.app",
+      "build": "set -o pipefail && xcodebuild -workspace ios/ReactNativePaperLoginTemplate.xcworkspace -sdk iphonesimulator14.5 -configuration Debug -scheme ReactNativePaperLoginTemplate -derivedDataPath build/ios -quiet"
+    }
+  },
+  "devices": {
+    "simulator": {
+      "type": "ios.simulator",
+      "device": {
+        "type": "iPhone 12 Pro Max"
+      }
+    }
+  },
+  "configurations": {
+    "ios": {
+      "device": "simulator",
+      "app": "ios"
+    }
+  }
+}
