@@ -21,14 +21,14 @@ const HomeScreen = ({ navigation }: Props) => (
     <Button
       mode="contained"
       onPress={() => navigation.navigate('LoginScreen')}
-      testID="login-screen"
+      testID="login-button"
     >
       Login
     </Button>
     <Button
       mode="outlined"
       onPress={() => navigation.navigate('RegisterScreen')}
-      testID="sign-up-screen"
+      testID="sign-up-button"
     >
       Sign Up
     </Button>

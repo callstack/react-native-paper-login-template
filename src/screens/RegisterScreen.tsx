@@ -53,6 +53,7 @@ const RegisterScreen = ({ navigation }: Props) => {
         onChangeText={text => setName({ value: text, error: '' })}
         error={!!name.error}
         errorText={name.error}
+        testID="name-input"
       />
 
       <TextInput
@@ -66,6 +67,7 @@ const RegisterScreen = ({ navigation }: Props) => {
         autoCompleteType="email"
         textContentType="emailAddress"
         keyboardType="email-address"
+        testID="login-input"
       />
 
       <TextInput
@@ -76,15 +78,24 @@ const RegisterScreen = ({ navigation }: Props) => {
         error={!!password.error}
         errorText={password.error}
         secureTextEntry
+        testID="password-input"
       />
 
-      <Button mode="contained" onPress={_onSignUpPressed} style={styles.button}>
+      <Button
+        mode="contained"
+        onPress={_onSignUpPressed}
+        style={styles.button}
+        testID="register-screen-sign-up-button"
+      >
         Sign Up
       </Button>
 
       <View style={styles.row}>
         <Text style={styles.label}>Already have an account? </Text>
-        <TouchableOpacity onPress={() => navigation.navigate('LoginScreen')}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('LoginScreen')}
+          testID="login-link"
+        >
           <Text style={styles.link}>Login</Text>
         </TouchableOpacity>
       </View>

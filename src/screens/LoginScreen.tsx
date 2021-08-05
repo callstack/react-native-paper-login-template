@@ -67,18 +67,26 @@ const LoginScreen = ({ navigation }: Props) => {
       <View style={styles.forgotPassword}>
         <TouchableOpacity
           onPress={() => navigation.navigate('ForgotPasswordScreen')}
+          testID="forgot-password-link"
         >
           <Text style={styles.label}>Forgot your password?</Text>
         </TouchableOpacity>
       </View>
 
-      <Button mode="contained" onPress={_onLoginPressed} testID="login-button">
+      <Button
+        mode="contained"
+        onPress={_onLoginPressed}
+        testID="login-screen-login-button"
+      >
         Login
       </Button>
 
       <View style={styles.row}>
         <Text style={styles.label}>Don’t have an account? </Text>
-        <TouchableOpacity onPress={() => navigation.navigate('RegisterScreen')}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('RegisterScreen')}
+          testID="sign-up-link"
+        >
           <Text style={styles.link}>Sign up</Text>
         </TouchableOpacity>
       </View>
