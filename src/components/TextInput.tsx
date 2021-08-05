@@ -15,7 +15,11 @@ const TextInput = ({ errorText, ...props }: Props) => (
       accessibilityLabel={props.label}
       {...props}
     />
-    {errorText ? <Text style={styles.error}>{errorText}</Text> : null}
+    {errorText ? (
+      <Text style={styles.error} testID="validation-error">
+        {errorText}
+      </Text>
+    ) : null}
   </View>
 );
 

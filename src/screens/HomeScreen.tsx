@@ -18,12 +18,17 @@ const HomeScreen = ({ navigation }: Props) => (
     <Paragraph>
       The easiest way to start with your amazing application.
     </Paragraph>
-    <Button mode="contained" onPress={() => navigation.navigate('LoginScreen')}>
+    <Button
+      mode="contained"
+      onPress={() => navigation.navigate('LoginScreen')}
+      testID="login-screen"
+    >
       Login
     </Button>
     <Button
       mode="outlined"
       onPress={() => navigation.navigate('RegisterScreen')}
+      testID="sign-up-screen"
     >
       Sign Up
     </Button>

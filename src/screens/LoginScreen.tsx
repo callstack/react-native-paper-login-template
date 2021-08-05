@@ -50,6 +50,7 @@ const LoginScreen = ({ navigation }: Props) => {
         autoCompleteType="email"
         textContentType="emailAddress"
         keyboardType="email-address"
+        testID="login-input"
       />
 
       <TextInput
@@ -60,6 +61,7 @@ const LoginScreen = ({ navigation }: Props) => {
         error={!!password.error}
         errorText={password.error}
         secureTextEntry
+        testID="password-input"
       />
 
       <View style={styles.forgotPassword}>
@@ -70,7 +72,7 @@ const LoginScreen = ({ navigation }: Props) => {
         </TouchableOpacity>
       </View>
 
-      <Button mode="contained" onPress={_onLoginPressed}>
+      <Button mode="contained" onPress={_onLoginPressed} testID="login-button">
         Login
       </Button>
 
