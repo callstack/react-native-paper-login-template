@@ -3,6 +3,11 @@
   "runnerConfig": "e2e/config.json",
   "skipLegacyWorkersInjection": true,
   "apps": {
+    "android": {
+      "type": "android.apk",
+      "binaryPath": "android/app/build/outputs/apk/debug/app-debug.apk",
+      "build": "cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=release && cd .."
+    },
     "ios": {
       "type": "ios.app",
       "binaryPath": "build/ios/Build/Products/Debug-iphonesimulator/reactnativepaperlogintemplate.app",
@@ -15,9 +20,19 @@
       "device": {
         "type": "iPhone 12 Pro Max"
       }
+    },
+    "emulator": {
+      "type": "android.emulator",
+      "device": {
+        "avdName": "Pixel_API_28_AOSP"
+      }
     }
   },
   "configurations": {
+    "android": {
+      "device": "emulator",
+      "app": "android"
+    },
     "ios": {
       "device": "simulator",
       "app": "ios"

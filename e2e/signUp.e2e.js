@@ -12,7 +12,7 @@ describe('Sign Up Feature', () => {
     await element(by.id('sign-up-button')).tap();
     await element(by.id('name-input')).typeText('John Doe');
     await element(by.id('login-input')).typeText('user@callstack.com');
-    await element(by.id('password-input')).typeText('somepassword');
+    await element(by.id('password-input')).typeText('somepassword\n');
     await element(by.id('register-screen-sign-up-button')).tap();
 
     expect(element(by.id('home-button'))).toBeVisible();
@@ -24,7 +24,7 @@ describe('Sign Up Feature', () => {
     await element(by.id('name-input')).typeText('John Doe');
     // note the # instead of @ in login
     await element(by.id('login-input')).typeText('user#callstack.com');
-    await element(by.id('password-input')).typeText('somepassword');
+    await element(by.id('password-input')).typeText('somepassword\n');
     await element(by.id('register-screen-sign-up-button')).tap();
 
     await expect(
